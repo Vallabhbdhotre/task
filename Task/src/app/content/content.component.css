@@ -1,0 +1,63 @@
+.content-body{
+    width: calc(100% - 25%);
+    height: calc(100vh -4rem);
+    position: absolute;
+    top: 4rem;
+    left:25%;
+   
+   
+}
+.header{
+    margin-bottom: 1.3rem;
+}
+.conten-form{
+ /* border: 1px solid black; */
+ padding:1rem;
+ margin-left: 2rem;
+ 
+}
+.content-fields-form{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 90%;
+}
+.content-fields{
+ margin: 0.1rem;
+}
+input[type=text],input[type=number]{
+    border: none;
+    border-bottom:1px solid rgb(134, 134, 134);
+    outline: none;
+}
+.arrayInput{
+    border: none;
+    width: 70%;
+    margin-top: 1rem;
+}
+.itemarray{
+    margin: 2rem  0;
+    width: 86%;
+
+}
+.btn{
+    width: 20%;
+    background-color: rgb(240, 198, 13);
+    border-radius: 1rem;
+}
+.head{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    
+}.but1{
+    border: none;
+    background-color: white;
+    margin-left:5px ;
+}
+.dis-input{
+    border: 1px solid black !important;
+    border-radius: 4px;
+    width: 40%;
+}
+.bill-section{
+ margin-left: 15rem;
+}

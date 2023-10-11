@@ -1,0 +1,152 @@
+<div class="content-body">
+  <div class="conten-form">
+    <div class="header">
+      <h4>Create new quote</h4>
+    </div>
+    <form [formGroup]="quoteForm">
+      <div class="content-fields-form">
+        <div class="content-fields">
+          <label for="Qnumber">Quote Number</label><br />
+          <input type="number" formControlName="quoteNumber" />
+        </div>
+        <div class="content-fields">
+          <label for="Qnumber">Location</label><br />
+          <input type="text" formControlName="location" />
+        </div>
+        <div class="content-fields">
+          <label for="Qnumber">Energy Consumption(KWh)</label><br />
+          <input type="number" formControlName="econsumption" />
+        </div>
+        <div class="content-fields">
+          <label for="Qnumber">Billing Information</label><br />
+          <input type="text" formControlName="billInfo" />
+        </div>
+        <div class="content-fields">
+          <label for="Qnumber">Available roof space</label><br />
+          <input type="text" formControlName="space" />
+        </div>
+        <div class="content-fields">
+          <label for="Qnumber">Battery Storage</label><br />
+          <input type="text" formControlName="bstorage" />
+        </div>
+      </div>
+      <div class="itemarray">
+        <table>
+          <thead class="head">
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+            <th>Amount</th>
+          </thead>
+          <tbody formArrayName="addItem">
+            <tr
+              *ngFor="let Item of itemArray.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <td>
+                <input class="arrayInput" type="text" formControlName="item" />
+              </td>
+              <td>
+                <input
+                  class="arrayInput"
+                  type="number"
+                  formControlName="price"
+                />
+              </td>
+              <td>
+                <input
+                  class="arrayInput"
+                  type="number"
+                  formControlName="quantity"
+                />
+              </td>
+              <td>
+                <input
+                  class="arrayInput"
+                  type="number"
+                  formControlName="discount"
+                  (input)="calculate()"
+                />
+              </td>
+              <td>
+                <input
+                  class="arrayInput"
+                  type="number"
+                  formControlName="amount"
+                  (input)="calculate()"
+                />
+              </td>
+              <td>
+                <span
+                  style="cursor: pointer; margin-top: 10px"
+                  class="material-symbols-outlined"
+                >
+                  edit
+                </span>
+              </td>
+              <td>
+                <button
+                  class="but1"
+                  [disabled]="itemArray.value.length <= 1"
+                  (click)="removeItem(i)"
+                >
+                  <span
+                    style="cursor: pointer; margin-top: 10px"
+                    class="material-symbols-outlined"
+                    role="button"
+                  >
+                    close
+                  </span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn" type="button" [disabled]="itemArray.invalid" (click)="additem()">Add Item</button>
+
+      <div class="bill-section">
+        <div class="row g-2 mb-1">
+          <div class="col-sm-4">
+            <p>sub-total</p>
+          </div>
+          <div class="col-sm-3">
+            <p *ngIf="bill">{{bill}}</p>
+          </div>
+        </div>
+        <div class="row g-3 mb-1">
+          <div class="col-sm-2">
+            <p>discount</p>
+          </div>
+          <div class="col-sm-2">
+            <input class="dis-input" type="text" />
+          </div>
+          <div class="col-sm-2">
+            <p>0.00</p>
+          </div>
+        </div>
+        <div class="row g-3 mb-1">
+          <div class="col-sm-2">
+            <p>TDS</p>
+          </div>
+          <div class="col-sm-2">
+            <input class="dis-input" type="text" />
+          </div>
+          <div class="col-sm-2">
+            <p>0.00</p>
+          </div>
+        </div>
+        <hr style="width: 45%;">
+        <div class="row g-3 mb-1">
+          <div class="col-sm-4">
+            <h5>Total</h5>
+          </div>
+          <div class="col-sm">
+            <h6>0.00</h6>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

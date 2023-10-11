@@ -1,0 +1,33 @@
+.sidebar{
+    height: 100vh;
+    background-color: rgb(208, 209, 211);
+    width: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-start-end-radius: 8px;
+    overflow-x: hidden;
+}
+.sidebar-content{
+   
+    padding: 1rem;
+}
+.brand{
+    margin-bottom: 1rem;
+}
+.main-content{
+    /* border: 1px solid black; */
+    margin-top: 3rem;
+    padding: 0.3rem;
+}
+.dropdown-menu{
+    background-color:rgb(208, 209, 211);
+    float: left !important;
+    outline: none;
+    border: none;
+    width: 8%;
+}
+.Toggled{
+    margin-bottom: 10rem;
+   
+}
